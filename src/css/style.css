@@ -1,0 +1,78 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.card-form-widget {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    min-width: 30%;
+    background-color: rgb(247, 250, 250);
+    padding: 30px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.card-input-text,
+.card-input {
+    display: block;
+}
+
+.card-input-text {
+    font-size: 40px;
+}
+
+.card-img {
+    width: 70px;
+    height: 70px;
+}
+
+.card-disabled {
+    opacity: 0.3;
+}
+
+.enabled {
+    opacity: 1;
+}
+
+.form-control {
+    display: flex;
+}
+
+.card-input {
+    width: 350px;
+    height: 30px;
+    font-size: 20px;
+    margin-right: 15px;
+    border-radius: 5px;
+    border: 1px solid black;
+    padding: 2px 7px;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+input[type='number'],
+input[type="number"]:hover,
+input[type="number"]:focus {
+    appearance: none;
+    -moz-appearance: textfield;
+}
+
+.button {
+    height: 35px;
+    width: 140px;
+    background-color: rgb(43, 119, 43);
+    border: none;
+    color:#fff;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+.button:hover {
+    background-color: rgb(5, 139, 5);
+    cursor: pointer;
+}
