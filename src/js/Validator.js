@@ -1,8 +1,4 @@
-import paySystems from "./PaySystems";
-
 export default class Validator {
-    constructor() {
-    }
 
     checkLuhnAlgorithm(value) {
         let numsArr = [];
@@ -23,9 +19,9 @@ export default class Validator {
         })
         sum = endArr.reduce((acc, num) => acc + num, 0) + Number(value[value.length - 1]);
         if (sum % 10 == 0) {
-            console.log('Card is valid!');
+            return true;
         } else {
-            console.log('Card is invalid!');
+            return false;
         }
     }
 }
