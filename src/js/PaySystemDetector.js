@@ -1,28 +1,35 @@
 import paySystems from "./PaySystems";
 
 export default class PaySystemDetector {
+    constructor() {
+        this.input = document.querySelector('.card-input');
+    }
 
-    detector() {
+    detector(value) {
         const cards = document.querySelectorAll('.card-img');
-        const input = document.querySelector('.card-input');
-        input.oninput = () => {
-            input.value = input.value.substr(0, 19);
-            for (let system of Object.keys(paySystems)) {
-                cards.forEach(card => {
-                    if (system == input.value) {
-                        card.classList.add('card-disabled');
-                        if (card.alt == paySystems[system]) {
-                            card.classList.remove('card-disabled');
-                        }
-                    }
-                    if (input.value == '' || input.value == 3 || input.value == 5 || input.value == 6 && card.classList.contains('card-disabled')) {
+        // value = this.input.value.substr(0, 19);
+        for (let system of Object.keys(paySystems)) {
+            cards.forEach(card => {
+                if (system == value[0] || system == value.substr(0, 2)) {
+                    card.classList.add('card-disabled');
+                    if (card.alt == paySystems[system]) {
                         card.classList.remove('card-disabled');
                     }
-                    if (input.value == '') {
-                        input.style.backgroundColor = '#fff';
+                }
+                if (value == '' || value == 3 || value == 5 || value == 6 && card.classList.contains('card-disabled')) {
+                    card.classList.remove('card-disabled');
                     }
-                }) 
-            }
+                if (value == '') {
+                    this.input.style.backgroundColor = '#fff';
+                }
+            }) 
+        }
+        return paySystems[value];
+    }
+
+    inputMonitor() {
+        this.input.oninput = () => {
+            this.detector(this.input.value);
         }
     }
 }

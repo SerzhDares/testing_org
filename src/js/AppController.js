@@ -7,7 +7,7 @@ export default class AppController {
     }
 
     init() {
-        new PaySystemDetector().detector();
+        new PaySystemDetector().inputMonitor();
         this.clickToValidate();  
     }
 
@@ -21,7 +21,6 @@ export default class AppController {
         }
         if (sign && this.input.value.length < 13) {
             this.input.style.backgroundColor = '#e78383';
-            this.input.style.title = 'shit';
         }
     }
 
