@@ -7,7 +7,6 @@ export default class PaySystemDetector {
 
     detector(value) {
         const cards = document.querySelectorAll('.card-img');
-        // value = this.input.value.substr(0, 19);
         for (let system of Object.keys(paySystems)) {
             cards.forEach(card => {
                 if (system == value[0] || system == value.substr(0, 2)) {

@@ -19,7 +19,7 @@ export default class AppController {
         } else {
             this.input.style.backgroundColor = '#e78383';
         }
-        if (sign && this.input.value.length < 13) {
+        if (sign && this.input.value.length < 13 || this.input.value.length > 19) {
             this.input.style.backgroundColor = '#e78383';
         }
     }
